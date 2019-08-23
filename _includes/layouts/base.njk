@@ -4,13 +4,11 @@
 	{% include "components/head.njk" %}
 
 	<body>
-{# 
+
 		<header>
-			<em>
-				<a href="{{ '/' | url }}">{{ metadata.title }}</a>
-			</em>
+      <a class="brand" href="{{ '/' | url }}">{{ metadata.title }}</a>
 			{% include "components/nav.njk" %}
-		</header> #}
+		</header>
 
 		<main>
 			{{ layoutContent | safe }}

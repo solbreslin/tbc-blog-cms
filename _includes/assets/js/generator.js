@@ -171,10 +171,17 @@ window.addEventListener('DOMContentLoaded', () => {
   const TEXT_BLOCKS = TEXT.split(".");
   const OUTPUT = document.getElementById("output");
   const TRIGGER = document.getElementById("trigger");
+  const MAIN = document.getElementById("main");
+  let isPlaying = false;
 
   function update() {
     OUTPUT.textContent = `${getRandomItemInArray(TEXT_BLOCKS)}.`;
     document.body.classList = `colour-${getRandomNumber(5)}`;
+  }
+
+  function onFirstClick() {
+    const main = document.querySelector('main');
+    main.classList.add('is-playing');
   }
 
   function getRandomItemInArray(arr) {
@@ -190,6 +197,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function addEventListener() {
     TRIGGER.addEventListener("click", () => {
+      if (!isPlaying) {
+        isPlaying = true;
+        onFirstClick();
+      }
       update();
     });
   }

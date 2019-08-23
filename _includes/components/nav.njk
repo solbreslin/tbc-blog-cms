@@ -1,9 +1,11 @@
 <nav>
-  <ul>
-  {%- for nav in collections.nav | sort(attribute="date") -%}
+  {# <ul>
+    {%- for nav in collections.nav | sort(attribute="date") -%}
     <li>
       <a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
     </li>
   {%- endfor -%}
-  </ul>
+  </ul> #}
+
+  <a href="https://2bconfirmed.tumblr.com/" target="_blank">blog</a>
 </nav>
